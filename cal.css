@@ -1,0 +1,142 @@
+/* === Global reset === */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #e3f2fd, #fce4ec);
+}
+
+/* === Calculator container === */
+#calculator {
+    background: #1e1e2f;
+    padding: 22px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 360px;
+
+    box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.35);
+}
+
+/* === Display === */
+#display {
+    width: 100%;
+    height: 64px;
+    padding: 12px 16px;
+    margin-bottom: 18px;
+
+    background: #f8f9fa;
+    border-radius: 12px;
+    border: none;
+
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: right;
+    color: #222;
+
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Placeholder */
+#display:empty::before {
+    content: "0";
+    color: #aaa;
+}
+
+/* === Buttons container === */
+#operators {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+/* === Base button === */
+.no {
+    border: none;
+    border-radius: 14px;
+    padding: 14px 0;
+
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+
+    background: #2a2a40;
+    color: #fff;
+
+    box-shadow:
+        0 6px 14px rgba(0, 0, 0, 0.35);
+
+    transition:
+        transform 0.12s ease,
+        box-shadow 0.12s ease,
+        filter 0.15s ease;
+}
+
+/* === Number buttons === */
+.no:not([name="operators"]):not(#cal):not(#clear) {
+    background: #3b3b5c;
+}
+
+/* === Operator buttons === */
+.no[name="operators"] {
+    background: #ffb703;
+    color: #1e1e2f;
+    font-weight: 700;
+}
+
+/* === Equals === */
+#cal {
+    background: linear-gradient(135deg, #00e676, #00c853);
+    color: #fff;
+    font-weight: 700;
+    grid-column: span 2;
+}
+
+/* === Clear === */
+#clear {
+    background: linear-gradient(135deg, #ff5252, #e53935);
+    color: #fff;
+    font-weight: 700;
+    grid-column: span 2;
+}
+
+/* === Hover effects === */
+.no:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.08);
+    box-shadow:
+        0 10px 22px rgba(0, 0, 0, 0.45);
+}
+
+/* === Active press === */
+.no:active {
+    transform: translateY(1px);
+    box-shadow:
+        0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* === Mobile tweaks === */
+@media (max-width: 400px) {
+    #calculator {
+        max-width: 320px;
+        padding: 18px;
+    }
+
+    #display {
+        font-size: 1.7rem;
+        height: 56px;
+    }
+
+    .no {
+        font-size: 1rem;
+        padding: 12px 0;
+    }
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCUATOR</title>
+    <link  rel="stylesheet" href="cal.css">
+</head>
+<body>
+    <div id="calculator">
+        <div id="display"> 
+        </div>
+        <br>
+        <div id="operators">
+        <button class="no" name="operators" onclick="setoperator('+')" id="plus">+</button>
+<button class="no" name="operators" onclick="setoperator('-')" id="minus">-</button>
+<button class="no" name="operators" onclick="setoperator('*')" id="mul">*</button>
+<button class="no" name="operators" onclick="setoperator('/')" id="div">/</button>
+
+<button class="no" onclick="setoperator('0')">0</button>
+<button class="no" onclick="setoperator('1')">1</button>
+<button class="no" onclick="setoperator('2')">2</button>
+<button class="no" onclick="setoperator('3')">3</button>
+<button class="no" onclick="setoperator('4')">4</button>
+<button class="no" onclick="setoperator('5')">5</button>
+<button class="no" onclick="setoperator('6')">6</button>
+<button class="no" onclick="setoperator('7')">7</button>
+<button class="no" onclick="setoperator('8')">8</button>
+<button class="no" onclick="setoperator('9')">9</button>
+<button class="no" onclick="setoperator('.')">.</button>
+<button onclick="cal()" id="cal" class="no">=</button>
+<button onclick="clearDisplay()" id="clear" class="no">C</button>
+        </div>
+    </div>
+  <script src="cal.js"></script>  
+</body>
+</html>
